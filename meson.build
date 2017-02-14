@@ -38,6 +38,8 @@ libpng = library('png',
 )
 
 incdir = include_directories('.')
+libpng_dep = declare_dependency(link_with: libpng,
+    include_directories: incdir)
 
 pngtest = executable('pngtest', 'pngtest.c',
   link_with : libpng)
